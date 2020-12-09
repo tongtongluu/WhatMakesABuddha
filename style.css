@@ -1,0 +1,62 @@
+body {
+    background-color: #101010;
+    overflow-x: hidden;
+    padding: 100px
+}
+
+#sections {
+    position: relative;
+    width: 400px;
+    top: 60px;
+    z-index: 90;
+    margin-left: 660px;
+    margin-right: 660px;
+}
+
+#vis {
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+    height: 1080px;
+    width: 1720px;
+    opacity: 1;
+}
+
+.step {
+    margin-bottom: 100px;
+    height: 700px;
+    padding-top: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.4em;
+    text-align: justify;
+}
+
+.canvas {
+    margin-top: 100px;
+}
+
+.textbox {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: orange;
+    height: 300px;
+    text-align: center;
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+#charts {
+    position: fixed;
+    width: 1720;
+    height: 1080;
+    margin-top: -100px;
+    z-index: 200;
+}
+
+#infobox {
+    width: 600px;
+    height: 1000px;
+    margin-top: -6200px;
+}
