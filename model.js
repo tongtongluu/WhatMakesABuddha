@@ -397,7 +397,7 @@ function init() {
     // Load a glTF resource
     loader.load(
         // resource URL
-        '3dmodel/scene.gltf',
+        'https://tongtongluu.github.io/WhatMakesABuddha/3dmodel/scene.gltf',
         // called when the resource is loaded
         function(gltf) {
             model = gltf.scene;
