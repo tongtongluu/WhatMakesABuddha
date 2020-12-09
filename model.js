@@ -151,9 +151,9 @@ function init_charts(dataset) {
         .attr('fill', function(d) {
             return "url(#" + d.rank + ")"
         })
-        .attr('r', 15)
-        .attr('cx', (d, i) => 5000)
-        .attr('cy', (d, i) => i * 5.2 + 30)
+        .attr('r', 10)
+        .attr('cx',  5000)
+        .attr('cy',  30)
         .attr('opacity', 0.8)
         .attr('class', d => d.catgegory)
 }
@@ -166,7 +166,7 @@ function draw_halo() {
 
     svg.selectAll('circle')
         .transition().duration(300).delay((d, i) => i * 5)
-        .attr('r', 15)
+        .attr('r', 25)
         .attr('fill', function(d) {
             return "url(#" + d.rank + ")"
         })
@@ -175,7 +175,7 @@ function draw_halo() {
         .force('charge', d3.forceManyBody().strength([2]))
         .force('forceX', d3.forceX(chart_x))
         .force('forceY', d3.forceY(chart_y))
-        .force('collide', d3.forceCollide(16))
+        .force('collide', d3.forceCollide(26))
         .alphaDecay([0.02])
 
     simulation.alpha(0.5).restart()
@@ -190,7 +190,7 @@ function draw_ushnisha() {
 
     svg.selectAll('circle')
         .transition().duration(300).delay((d, i) => i * 5)
-        .attr('r', 15)
+        .attr('r', 25)
         .attr('fill', function(d) {
             return "url(#" + d.rank + ")"
         })
@@ -199,7 +199,7 @@ function draw_ushnisha() {
         .force('charge', d3.forceManyBody().strength([2]))
         .force('forceX', d3.forceX(chart_x))
         .force('forceY', d3.forceY(chart_y))
-        .force('collide', d3.forceCollide(16))
+        .force('collide', d3.forceCollide(26))
         .alphaDecay([0.02])
 
     simulation.alpha(0.5).restart()
@@ -213,7 +213,7 @@ function draw_earlobe() {
 
     svg.selectAll('circle')
         .transition().duration(300).delay((d, i) => i * 5)
-        .attr('r', 15)
+        .attr('r', 25)
         .attr('fill', function(d) {
             return "url(#" + d.rank + ")"
         })
@@ -222,7 +222,7 @@ function draw_earlobe() {
         .force('charge', d3.forceManyBody().strength([2]))
         .force('forceX', d3.forceX(chart_x))
         .force('forceY', d3.forceY(chart_y))
-        .force('collide', d3.forceCollide(16))
+        .force('collide', d3.forceCollide(26))
         .alphaDecay([0.02])
 
     simulation.alpha(0.5).restart()
@@ -259,7 +259,7 @@ function draw_lotus() {
 
     svg.selectAll('circle')
         .transition().duration(300).delay((d, i) => i * 5)
-        .attr('r', 15)
+        .attr('r', 25)
         .attr('fill', function(d) {
             return "url(#" + d.rank + ")"
         })
@@ -268,7 +268,7 @@ function draw_lotus() {
         .force('charge', d3.forceManyBody().strength([2]))
         .force('forceX', d3.forceX(chart_x))
         .force('forceY', d3.forceY(chart_y))
-        .force('collide', d3.forceCollide(16))
+        .force('collide', d3.forceCollide(26))
         .alphaDecay([0.02])
 
     simulation.alpha(0.5).restart()
@@ -282,7 +282,7 @@ function draw_animal() {
 
     svg.selectAll('circle')
         .transition().duration(300).delay((d, i) => i * 5)
-        .attr('r', 15)
+        .attr('r', 25)
         .attr('fill', function(d) {
             return "url(#" + d.rank + ")"
         })
@@ -291,7 +291,7 @@ function draw_animal() {
         .force('charge', d3.forceManyBody().strength([2]))
         .force('forceX', d3.forceX(chart_x))
         .force('forceY', d3.forceY(chart_y))
-        .force('collide', d3.forceCollide(16))
+        .force('collide', d3.forceCollide(26))
         .alphaDecay([0.02])
 
     simulation.alpha(0.5).restart()
@@ -412,7 +412,7 @@ function init() {
         },
         // called while loading is progressing
 
-<!-- whyyyyyyyyyyy!!!!! -->
+// why!!!!!!!!!!!not!!!!!!!!!!!!!working!!!!!!!!!!!!!!
         function(xhr) {
 
             console.log((xhr.loaded / xhr.total * 100) + '% loaded');
@@ -501,7 +501,7 @@ function updateMain() {
 // halo position
 function updateHalo() {
     let tween = new TWEEN.Tween(coords)
-        .to({ x: -6, y: 1, z: 8, rx: 0, ry: 0 }, 1000)
+        .to({ x: -6, y: 1, z: 10, rx: 0, ry: 0 }, 1000)
         .easing(TWEEN.Easing.Quadratic.Out)
         .onUpdate(function() {
             camera.position.x = coords.x;
@@ -518,7 +518,7 @@ function updateHalo() {
 // ushnisha position
 function updateUshnisha() {
     let tween = new TWEEN.Tween(coords)
-        .to({ x: 0, y: 2, z: 7, rx: 20, ry: 20 }, 1000)
+        .to({ x: -1, y: 3.5, z: 5, rx: 0, ry: 52 }, 1000)
         .easing(TWEEN.Easing.Quadratic.Out)
         .onUpdate(function() {
             camera.position.x = coords.x;
@@ -534,7 +534,7 @@ function updateUshnisha() {
 
 function updateEarlobe() {
     let tween = new TWEEN.Tween(coords)
-        .to({ x: -6, y: 0, z: 5, rx: 0, ry: 0 }, 1000)
+        .to({ x: -1, y: 1, z: 5, rx: 0, ry: 52 }, 1000)
         .easing(TWEEN.Easing.Quadratic.Out)
         .onUpdate(function() {
             camera.position.x = coords.x;
@@ -550,7 +550,7 @@ function updateEarlobe() {
 
 function updateMudra() {
     let tween = new TWEEN.Tween(coords)
-        .to({ x: -6, y: -1, z: 15, rx: 0, ry: 0 }, 1000)
+        .to({ x: -8.5, y: 1, z: 8, rx: 0, ry: -25 }, 1000)
         .easing(TWEEN.Easing.Quadratic.Out)
         .onUpdate(function() {
             camera.position.x = coords.x;
@@ -566,7 +566,7 @@ function updateMudra() {
 
 function updateLotus() {
     let tween = new TWEEN.Tween(coords)
-        .to({ x: -6, y: -1, z: 15, rx: 0, ry: 0 }, 1000)
+        .to({ x: -6, y: -2, z: 10, rx: 5, ry: 0 }, 1000)
         .easing(TWEEN.Easing.Quadratic.Out)
         .onUpdate(function() {
             camera.position.x = coords.x;
