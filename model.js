@@ -411,6 +411,8 @@ function init() {
             gltf.asset; // Object
         },
         // called while loading is progressing
+
+<!-- whyyyyyyyyyyy!!!!! -->
         function(xhr) {
 
             console.log((xhr.loaded / xhr.total * 100) + '% loaded');
@@ -442,6 +444,7 @@ function init() {
     //All the scrolling function
     //Will draw a new graph based on the index provided by the scroll
 
+    // whyyyy!!!!!!!!!!!!!!!!! 
     let scroll = scroller()
         .container(d3.select('#graphic'))
     scroll()
