@@ -19,23 +19,23 @@ Shakyamuni Buddha is the founder of the Buddhist religion. He lived and taught i
 ![](sketch3.png)
 
 ## Data Processing
-all my datasets are relatively small with no more than 100 instaces. 
+All my datasets are relatively small with no more than 100 instaces, collected them individually with a continuous index number to select later
 And I should admit that I did a lot manual work to get data ready for visualize. for example the classification of the medium in art history is particularly detailed. And im very into crop out part of the images
 ![](dataprocessing.png)
 
 ## Programming
-try to work with Three.js. Downloaded a 3d model online and make the angel changes with the xy position. Notice this time it is 3D, so I have, x,y,z,rx,ry to adjust. Do not really follow the logic here, can only try out the numbers to see if the model's been rotated into the right position for presenting. 
+Try to work with Three.js. Downloaded a 3d model online and make the angel changes with the xy position. Notice this time it is 3D, so I have, x,y,z,rx,ry to adjust. Do not really follow the logic here, can only try out the numbers to see if the model's been rotated into the right position for presenting. 
 ![](rotate.png)
 
 ### Still a lot to improve
-- the files been organized in a messy way to make the github page work
-- should add a minuture view of the Buddha, so the viewers can click to the specific part without having to scroll down.
-- add filters to some part have multiple options such as mudras and animals. 
+- The files been organized in a messy way to make the github page work
+- Should add a minuture view of the Buddha, so the viewers can click to the specific part without having to scroll down.
+- Add filters to some part have multiple options such as mudras and animals. 
 
 ## Final Design
-![](p3_1.png)
-![](p3_2.png)
-![](p3_3.png)
+![](P3_1.png)
+![](P3_2.png)
+![](P3_3.png)
 
 ### Video
 
