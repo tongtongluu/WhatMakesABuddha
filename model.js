@@ -262,16 +262,16 @@ function draw_mudra() {
     simulation.alpha(0.5).restart()
 
     let imgs = [
-        '/img/4_mudras/3_white/abhaya.png',
-        '/img/4_mudras/3_white/abhiseka.png',
-        '/img/4_mudras/3_white/anjali.png',
-        '/img/4_mudras/3_white/bhumisparsha.png',
-        '/img/4_mudras/3_white/dharmachakra.png',
-        '/img/4_mudras/3_white/dhyana.png',
-        '/img/4_mudras/3_white/kataka.png',
-        '/img/4_mudras/3_white/vajra.png',
-        '/img/4_mudras/3_white/varada.png',
-        '/img/4_mudras/3_white/vitarka.png'
+        '/img/abhaya.png',
+        '/img/abhiseka.png',
+        '/img/anjali.png',
+        '/img/bhumisparsha.png',
+        '/img/dharmachakra.png',
+        '/img/dhyana.png',
+        '/img/kataka.png',
+        '/img/vajra.png',
+        '/img/varada.png',
+        '/img/vitarka.png'
     ];
 
     d3.select('#infobox').append('h1').text('Mudra')
