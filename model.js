@@ -262,16 +262,16 @@ function draw_mudra() {
     simulation.alpha(0.5).restart()
 
     let imgs = [
-        '/img/abhaya.png',
-        '/img/abhiseka.png',
-        '/img/anjali.png',
-        '/img/bhumisparsha.png',
-        '/img/dharmachakra.png',
-        '/img/dhyana.png',
-        '/img/kataka.png',
-        '/img/vajra.png',
-        '/img/varada.png',
-        '/img/vitarka.png'
+        'abhaya.png',
+        'abhiseka.png',
+        'anjali.png',
+        'bhumisparsha.png',
+        'dharmachakra.png',
+        'dhyana.png',
+        'kataka.png',
+        'vajra.png',
+        'varada.png',
+        'vitarka.png'
     ];
 
     d3.select('#infobox').append('h1').text('Mudra')
@@ -398,10 +398,10 @@ function draw_animal() {
     simulation.alpha(0.5).restart()
 
     let imgs = [
-        '/img/6_animals/3_white/deer.png',
-        '/img/6_animals/3_white/elephant.png',
-        '/img/6_animals/3_white/lions.png',
-        '/img/6_animals/3_white/monkey.png',
+        'deer.png',
+        'elephant.png',
+        'lions.png',
+        'monkey.png',
     ];
 
     d3.select('#infobox').append('h1').text('Little companions')
