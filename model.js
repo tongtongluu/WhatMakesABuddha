@@ -151,11 +151,13 @@ function init_charts(dataset) {
         .attr('fill', function(d) {
             return "url(#" + d.rank + ")"
         })
-        .attr('r', 10)
-        .attr('cx',  5000)
-        .attr('cy',  30)
+        .attr('r', 25)
+        .attr('cx', (d, i) => 5000)
+        .attr('cy', (d, i) => i * 5.2 + 30)
         .attr('opacity', 0.8)
         .attr('class', d => d.catgegory)
+        .on('mouseover', mouseOver)
+        .on('mouseout', mouseOut)
 }
 
 function draw_halo() {
@@ -179,6 +181,9 @@ function draw_halo() {
         .alphaDecay([0.02])
 
     simulation.alpha(0.5).restart()
+
+    d3.select('#infobox').append('h1').text('Halo')
+    d3.select('#infobox').append('p').text('Symbols of radiance. Among these may be a halo around the head or whole body, a flame at the top of the head, or a gold-covered surface.')
 }
 
 function draw_ushnisha() {
@@ -203,6 +208,9 @@ function draw_ushnisha() {
         .alphaDecay([0.02])
 
     simulation.alpha(0.5).restart()
+
+    d3.select('#infobox').append('h1').text('Ushnisha')
+    d3.select('#infobox').append('p').text('Superhuman physical characteristics such as very large size, a lump on the top of the head sometimes said to indicate extraordinary wisdom.')
 }
 
 function draw_earlobe() {
@@ -226,6 +234,9 @@ function draw_earlobe() {
         .alphaDecay([0.02])
 
     simulation.alpha(0.5).restart()
+
+    d3.select('#infobox').append('h1').text('Earlobe')
+    d3.select('#infobox').append('p').text('Long earlobes, stretched during the years when the Buddha-to-be, as a prince, wore heavy earrings.')
 }
 
 function draw_mudra() {
@@ -249,6 +260,93 @@ function draw_mudra() {
         .alphaDecay([0.02])
 
     simulation.alpha(0.5).restart()
+
+    let imgs = [
+        '/img/4_mudras/3_white/abhaya.png',
+        '/img/4_mudras/3_white/abhiseka.png',
+        '/img/4_mudras/3_white/anjali.png',
+        '/img/4_mudras/3_white/bhumisparsha.png',
+        '/img/4_mudras/3_white/dharmachakra.png',
+        '/img/4_mudras/3_white/dhyana.png',
+        '/img/4_mudras/3_white/kataka.png',
+        '/img/4_mudras/3_white/vajra.png',
+        '/img/4_mudras/3_white/varada.png',
+        '/img/4_mudras/3_white/vitarka.png'
+    ];
+
+    d3.select('#infobox').append('h1').text('Mudra')
+    imgs.forEach(function(d, i) {
+        d3.select('#infobox').append('img')
+            .attr('src', d)
+            .attr('height', 75)
+            .attr('width', 75)
+            .on('mouseover', function(d) {
+                d3.select(this).style("cursor", "pointer");
+            })
+            .on('mouseout', function(d) {
+                d3.select(this).style("cursor", "default");
+            })
+            .on('click', function() {
+                let mudra, text;
+                switch (i) {
+                    case 0:
+                        mudra = 'abhaya'
+                        text = 'The gesture of fearlessness, which dispels fear. The right hand is held upright, and the palm is facing outwards.This is one of the earliest mudrās found depicted on a number of Buddhism artworks.It is also the most common mudra in the Smithsonian collection'
+                        break;
+                    case 1:
+                        mudra = 'abhiseka'
+                        text = 'Abheseka means "bathing of the divinity to whom worship is offered."It is a religious rite or method of prayer in which a devotee pours a liquid offering on an image or murti of a God or Goddess. The abhiṣeka was originally used as a consecration rite. Water from the four oceans was poured out of golden jars onto the head of royalty. '
+                        break;
+                    case 2:
+                        mudra = 'anjali'
+                        text = 'This mudra is widely used in the parts of Southeast Asia where Indian religions are strong. It is used as a greeting. Namaste is usually spoken with a slight bow and hands pressed together, palms touching and fingers pointing upwards, thumbs close to the chest. '
+                        break;
+                    case 3:
+                        mudra = 'bhumisparsha'
+                        text = 'Also called "earth witness" mudra is one of the most common iconic images of Buddhism. Other names include "Buddha calling the earth to witness", and "earth-touching". It depicts the story from the Buddhist legend of the moment when Buddha achieved complete enlightenment, with Buddha sitting in meditation with his left hand, palm upright, in his lap, and his right hand touching the earth. '
+                        break;
+                    case 4:
+                        mudra = 'dharmachakra'
+                        text = 'Dharmachakra in Sanskrit means the Wheel of Dharma. This mudra symbolizes one of the most important moments in the life of Buddha, the occasion when he preached to his companions the first sermon after his Enlightenment in the Deer Park at Sarnath. It thus denotes the setting into motion of the Wheel of the teaching of the Dharma.'
+                        break;
+                    case 5:
+                        mudra = 'dhyana';
+                        text = 'Also called the meditation mudra",it is the gesture of meditation. The two hands are placed on the lap, left hand on right with fingers fully stretched (four fingers resting on each other and the thumbs facing upwards towards one another diagonally), palms facing upwards; in this manner, the hands and fingers form the shape of a triangle, which is symbolic of the spiritual fire'
+                        break;
+                    case 6:
+                        mudra = 'kataka';
+                        text = 'Meaning  “link in a chain” in  English,  Kataka-mukha Mudra is the twelfth hand gesture of the 28 single-hand mudras as described in the mythology.  This mudra originated from Guha when he practiced archery in front of Shiva. Appears more in dancing scenes including “plucking flowers”,“wearing a necklace of pearls or flowers”,“preparing paste for musk ”etc.'
+                        break;
+                    case 7:
+                        mudra = 'vajra';
+                        text = 'The Vajra mudrā "thunder gesture" is the gesture of knowledge. In vajra Mudra, the index finger is extended straight while rest 3 fingertips pressed against the thumb. The extended index finger denotes the fiery thunderbolt weapon or Vajra. It is a weapon with which ignorance can transform into wisdom. '
+                        break;
+                    case 8:
+                        mudra = 'varada';
+                        text = 'This mudra signifies offering, welcome, charity, giving, compassion, and sincerity. It is nearly always shown made with the left hand by a revered figure devoted to human salvation from greed, anger, and delusion. The Varada mudrā is rarely seen without another mudra used by the right hand. In Smithsonian collections, it often appears with the Abhaya mudra.'
+                        break;
+                    case 9:
+                        mudra = 'vitarka';
+                        text = 'The Vitarka mudrā "mudra of discussion" is the gesture of discussion and transmission of Buddhist teaching. It is done by joining the tips of the thumb and the index together, and keeping the other fingers straight very much like the abhaya and varada mudrās but with the thumbs touching the index fingers.'
+                        break;
+                }
+                d3.selectAll('circle').filter(function(d) {
+                        return d.category != mudra
+                    })
+                    .attr('opacity', 0)
+                    .on('mouseover', function() {})
+                    .on('mouseout', function() {})
+
+                d3.selectAll('circle').filter(function(d) {
+                        return d.category == mudra
+                    })
+                    .attr('opacity', 0.8)
+                    .on('mouseover', mouseOver)
+                    .on('mouseout', mouseOut)
+                d3.select('#mudratext').text(text)
+            })
+    })
+    d3.select('#infobox').append('p').text('a symbolic or ritual gesture or pose in Buddhism, most are performed with the hands and fingers. A Buddha image can have one of several common mudras, combined with different asanas. The main mudras used represent specific moments in the life of Buddha').attr('id', 'mudratext')
 }
 
 function draw_lotus() {
@@ -272,6 +370,9 @@ function draw_lotus() {
         .alphaDecay([0.02])
 
     simulation.alpha(0.5).restart()
+
+    d3.select('#infobox').append('h1').text('Lotus')
+    d3.select('#infobox').append('p').text('According to the Buddhist teachings, just as the lotus rises up from the depths of muddy ponds and lakes to blossom immaculately above the water’s surface, so too can the human heart or mind develop the virtues of the Buddha and transcend desire and attachment to reveal its essentially pure nature.')
 }
 
 function draw_animal() {
@@ -295,10 +396,70 @@ function draw_animal() {
         .alphaDecay([0.02])
 
     simulation.alpha(0.5).restart()
+
+    let imgs = [
+        '/img/6_animals/3_white/deer.png',
+        '/img/6_animals/3_white/elephant.png',
+        '/img/6_animals/3_white/lions.png',
+        '/img/6_animals/3_white/monkey.png',
+    ];
+
+    d3.select('#infobox').append('h1').text('Little companions')
+    imgs.forEach(function(d, i) {
+        d3.select('#infobox').append('img')
+            .attr('src', d)
+            .attr('height', 50)
+            .attr('width', 50)
+            .attr('opacity', 0.30)
+            .on('mouseover', function(d) {
+                d3.select(this).style("cursor", "pointer");
+            })
+            .on('mouseout', function(d) {
+                d3.select(this).style("cursor", "default");
+            })
+            .on('click', function() {
+                let animal, text;
+                switch (i) {
+                    case 0:
+                        animal = 'deer'
+                        text = 'In Buddhism, the deer symbolizes harmony, happiness, peace and longevity. When a male and a female deer are represented together (often beside the Dharma wheel) it is a direct allusion to the first teachings of Buddha near Varanasi.A very important scene in Buddhism art. '
+                        break;
+                    case 1:
+                        animal = 'elephant'
+                        text = 'In Buddhism, the elephant is seen as an earthly manifestation of the qualities embodied in the Buddha himself. Even at his inception, Buddha was linked to the elephant. ... A classic symbol of strength, patience, loyalty and wisdom, the elephant epitomizes the boundless powers of the Buddha.'
+                        break;
+                    case 2:
+                        animal = 'lions'
+                        text = 'The lion references the Buddha, formerly Shakyamuni, a member of the Shakya (lion) clan. The lion is also a symbol of royalty and leadership and oftentimes in Buddism art, the Buddisava follows Buddha, called Manjuri, riding a lion. '
+                        break;
+                    case 3:
+                        animal = 'monkey'
+                        text = 'According to Buddhist principles, the “monkey mind” is a term that refers to being unsettled, restless, or confused. ... It is also the part of your brain that becomes easily distracted, so if you want to get anything done in life, your challenge will be to shut down the monkey mind'
+                        break;
+                }
+                d3.selectAll('circle').filter(function(d) {
+                        return d.category != animal
+                    })
+                    .attr('opacity', 0)
+                    .on('mouseover', function() {})
+                    .on('mouseout', function() {})
+
+                d3.selectAll('circle').filter(function(d) {
+                        return d.category == animal
+                    })
+                    .attr('opacity', 0.8)
+                    .on('mouseover', mouseOver)
+                    .on('mouseout', mouseOut)
+                d3.select('#animaltext').text(text)
+            })
+
+    })
+    d3.select('#infobox').append('p').text('Animals have always been regarded in Buddhist thought as sentient beings. Furthermore, animals possess Buddha nature and therefore potential for enlightenment. Moreover, the doctrine of rebirth held that any human could be reborn as animal, and any animal could be reborn as a human.').attr('id', 'animaltext')
 }
 
 function reset_canvas() {
     d3.select('svg').remove();
+    d3.select('#infobox').html('');
 }
 
 function mouseOver(d, i) {
@@ -315,10 +476,10 @@ function mouseOver(d, i) {
     d3.select('#tooltip')
         .style('left', (d3.event.pageX + 100) + 'px')
         .style('top', (d3.event.pageY - 50) + 'px')
-        .style('display', 'inline-block')
+        .style('display', 'relative')
         .html(`<strong>Name:</strong> ${d.name} 
-            <br> <strong>Mudra:</strong> ${(d.mudra)} 
-            <br> <strong>Origin:</strong> ${d.origin}`)
+            <br> <strong>Mudra:</strong> ${(d.category)} 
+            <br> <strong>Material:</strong> ${d.material}`)
 }
 
 function mouseOut(d, i) {
@@ -330,7 +491,6 @@ function mouseOut(d, i) {
         .attr('opacity', 0.8)
         .attr('r', 15)
 }
-
 
 
 
